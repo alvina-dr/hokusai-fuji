@@ -43,16 +43,103 @@ button:hover {
     margin-right: 5px;
 }
 
+.row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: nowrap;
+}
+
+.div-column {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+section {
+    display: flex;
+    width: 100%;
+    margin: auto;
+}
+
+#lavague {
+    width: calc(100%/12*10);
+    margin: auto;
+}
+
+hr {
+    height: 5px;
+    background-color: #193541;
+    width: calc(100%/12);
+    border: none;
+    text-align: left;
+    margin: 55px 0 40px;
+}
+
+
+/*A PROPOS STYLE ---------------------------------*/
+
+#a-propos {
+    width: calc(100%/12*8);
+    margin: auto;
+    display: flex;
+    align-content: flex-start;
+    justify-content: center;
+    margin-bottom: 300px;
+}
+
+#a-propos p {
+    width: 50%;
+    text-align: justify;
+}
+
+#a-propos .portrait {
+    position: absolute;
+    display: flex;
+    align-self: flex-end;
+    height: auto;
+    width: calc(100%/12*4.5);
+    z-index: -1;
+}
+
+#a-propos .kanji {
+    position: absolute;
+    height: 100%;
+    width: auto;
+    z-index: -2;
+    align-self: center;
+    padding-right: 17%;
+}
+
+
+/*GÉNÉRAL OEUVRES STYLE----------------*/
+
+.oeuvres {
+    width: 100%;
+}
+
+.nuancier {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.oeuvre-nuancier {
+    width: calc(100%/10*7);
+    margin: 0;
+}
+
 .slider {
     color: var(--dark-color);
     background-color: var(--dark-color);
 }
 
-.row {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
+.sliders {
+    width: calc(100%/10*2);
+    margin: 0;
 }
+
+
+/*FIN IMAGES STYLE----------------*/
 
 nav {
     display: flex;
@@ -67,11 +154,34 @@ nav ul {
 }
 
 nav ul li {
-    margin: 10px;
+    margin: 45px 60px;
 }
 
 nav ul li a {
+    color: var(--dark-color);
+    text-decoration: none;
     font-weight: 400;
     font-size: 16px;
     text-shadow: 0 1px 1px var(--transparent-action-color);
+}
+
+
+/*TEXTES STYLE--------------------------------------*/
+
+h1 {
+    font-family: Baskerville Old Face;
+    font-size: 44px;
+    margin: 0;
+}
+
+h2 {
+    font-family: Baskerville Old Face;
+    font-size: 36px;
+    margin: 0;
+    margin-top: 60px;
+}
+
+p {
+    font-family: Montserrat;
+    font-size: 16px;
 }

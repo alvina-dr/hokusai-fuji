@@ -4,41 +4,67 @@
 <head>
     <meta charset="utf-8">
     <title>Art</title>
-
+    <script src="capture.js"></script>
+    <script src="filter.js"></script>
     <link rel="stylesheet" href="style.css" type="text/css" media="all">
 </head>
 
 <body>
     <nav>
         <ul>
-            <li><a>À propos</a></li>
-            <li><a>Le pêcheur</a></li>
-            <li><a>La vague</a></li>
-            <li><a>Le lac de Suwa</a></li>
+            <li><a href="#">À propos</a></li>
+            <li><a href="#">Le pêcheur</a></li>
+            <li><a href="#lavague">La vague</a></li>
+            <li><a href="#">Le lac de Suwa</a></li>
         </ul>
     </nav>
-    <div class="row">
 
-        <img id="image1" src="tsunami.jpg" class="">
-        <div class="sliders">
-            <label>Blur</label>
-            <input type="range" class="slider" min="0" max="100" value="0" step="1" onchange="applyFilter()" data-filter="blur" data-scale="px"><br>
-            <label>Contrast</label>
-            <input type="range" class="slider" min="0" max="100" value="100" step="1" onchange="applyFilter()" data-filter="contrast" data-scale="%"><br>
-            <label>Brightness</label>
-            <input type="range" class="slider" min="0" max="100" value="100" step="1" onchange="applyFilter()" data-filter="brightness" data-scale="%"><br>
-            <label>Grayscale</label>
-            <input type="range" class="slider" min="0" max="100" value="0" step="1" onchange="applyFilter()" data-filter="grayscale" data-scale="%"><br>
-            <label>Hue Rotate</label>
-            <input type="range" class="slider" min="0" max="100" value="0" step="1" onchange="applyFilter()" data-filter="hue-rotate" data-scale="deg"><br>
-        </div>
-    </div>
-    <div class="row">
+    <video id="video">Video stream not available.</video>
+    <canvas id="mycanvas"></canvas>
+    <img id="photo" alt="The screen capture will appear in this box.">
+    <section class="row">
         <button id="startbutton">Take photo</button>
         <button id="invertbutton">Mon filtre</button>
-    </div>
+    </section>
+    <section id="a-propos" class="div-column">
+        <h1>Hokusai Katsushika</h1>
+        <p>Hokusai Katsushika est un artiste japonais pratiquant la peinture, le dessin et la gravure. <br>Il est également connu comme auteur d’écrits populaires au japon. <br>Hokusai, aussi surnommé le “Vieux fou du dessin” est principalement reconnu pour
+            son oeuvre “La grande vague de Kanagawa” et sa série d’estampes s’intitulant “36 vues du Mont Fuji”, publiées au début du XIXème siècle.
+        </p>
+        <img src="img/illustration-hokusai.png" class="portrait">
+        <img src="img/hokusai-caractere.png" class="kanji">
+    </section>
+
+    <section id="lavague" class="div-column">
+        <h2>La grande vague de Kanagawa</h2>
+        <hr>
+        <p>La grande vague de Kanagawa est certainement l’oeuvre la plus célèbre de Hokusai. Elle fait partie de la série des 36 estampes appelées ukiyo-e et ayant pour thème le Mont-Fuji. Cette oeuvre est composée de trois éléments : une mer agitée, 3 bateaux
+            et le Mont Fuji.</p>
+        <p> La mer agitée est un symbole de destruction. Elle forme un rouleau qui vise à détruire les oshiokuri-bune, les bateaux de pêcheurs. Ces derniers sont typiques du japon au XIXème siècle. <br>Enfin, le Mont-Fuji est reconnaissable à son sommet enneigé.
+            Il passe au dernier plan, mais représente le japon et la province de Kanagawa, d’où le nom de l’oeuvre.</p>
+        <div class="div-row ">
+            <div class="div-column oeuvre-nuancier">
+                <img id="image1" class="oeuvres" src="img/lavague.jpg">
+                <img src="img/nuancier-vague.png" class="nuancier">
+            </div>
+            <div class="sliders">
+                <!--label>Blur</label>
+                <input type="range" class="slider" min="0" max="100" value="0" step="1" onchange="applyFilter()" data-filter="blur" data-scale="px"><br>
+                <label>Contrast</label>
+                <input type="range" class="slider" min="0" max="100" value="100" step="1" onchange="applyFilter()" data-filter="contrast" data-scale="%"><br-->
+                <label>Luminosité</label>
+                <input id="luminosity" type="range" class="slider" min="-100" max="100" onchange="myInvert()" value="0" step="10"><br>
+                <!--label>Grayscale</label>
+                <input type="range" class="slider" min="0" max="100" value="0" step="1" onchange="applyFilter()" data-filter="grayscale" data-scale="%"><br>
+                <label>Hue Rotate</label>
+                <input type="range" class="slider" min="0" max="100" value="0" step="1" onchange="applyFilter()" data-filter="hue-rotate" data-scale="deg"><br-->
+            </div>
+        </div>
+    </section>
+
+
 </body>
-<script type="text/javascript">
+<!--script type="text/javascript">
     var image = document.getElementById('image1');
     var filterControls = document.querySelectorAll('input[type=range]');
 
@@ -49,6 +75,6 @@
         });
         image.style.filter = computedFilters;
     };
-</script>
+</script-->
 
 </html>

@@ -20,8 +20,6 @@
     var startbutton = null;
 
     function startup() {
-
-        // référencement des objets graphiques contenus dans ma pages web ;)
         video = document.getElementById('video');
         canvas = document.getElementById('mycanvas');
         photo = document.getElementById('photo');
