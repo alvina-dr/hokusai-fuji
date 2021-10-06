@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Art</title>
+
+    <link rel="stylesheet" href="style.css" type="text/css" media="all">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a>À propos</a></li>
+            <li><a>Le pêcheur</a></li>
+            <li><a>La vague</a></li>
+            <li><a>Le lac de Suwa</a></li>
+        </ul>
+    </nav>
+    <div class="row">
+
+        <img id="image1" src="tsunami.jpg" class="">
+        <div class="sliders">
+            <label>Blur</label>
+            <input type="range" class="slider" min="0" max="100" value="0" step="1" onchange="applyFilter()" data-filter="blur" data-scale="px"><br>
+            <label>Contrast</label>
+            <input type="range" class="slider" min="0" max="100" value="100" step="1" onchange="applyFilter()" data-filter="contrast" data-scale="%"><br>
+            <label>Brightness</label>
+            <input type="range" class="slider" min="0" max="100" value="100" step="1" onchange="applyFilter()" data-filter="brightness" data-scale="%"><br>
+            <label>Grayscale</label>
+            <input type="range" class="slider" min="0" max="100" value="0" step="1" onchange="applyFilter()" data-filter="grayscale" data-scale="%"><br>
+            <label>Hue Rotate</label>
+            <input type="range" class="slider" min="0" max="100" value="0" step="1" onchange="applyFilter()" data-filter="hue-rotate" data-scale="deg"><br>
+        </div>
+    </div>
+    <div class="row">
+        <button id="startbutton">Take photo</button>
+        <button id="invertbutton">Mon filtre</button>
+    </div>
+</body>
+<script type="text/javascript">
+    var image = document.getElementById('image1');
+    var filterControls = document.querySelectorAll('input[type=range]');
+
+    function applyFilter() {
+        var computedFilters = '';
+        filterControls.forEach(function(item, index) {
+            computedFilters += item.getAttribute('data-filter') + '(' + item.value + item.getAttribute('data-scale') + ') ';
+        });
+        image.style.filter = computedFilters;
+    };
+</script>
+
+</html>
