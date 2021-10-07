@@ -4,26 +4,27 @@
 <head>
     <meta charset="utf-8">
     <title>Art</title>
-    <script src="capture.js"></script>
-    <script src="f-sub-contrast.js"></script>
-    <script src="f-add-contrast.js"></script>
-    <script src="f-add-luminosity.js"></script>
-    <script src="f-sub-luminosity.js"></script>
-    <script src="f-black-white.js"></script>
+    <script src="js/capture.js"></script>
+    <script src="js/f-sub-contrast.js"></script>
+    <script src="js/f-add-contrast.js"></script>
+    <script src="js/f-add-luminosity.js"></script>
+    <script src="js/f-sub-luminosity.js"></script>
+    <script src="js/f-black-white.js"></script>
+    <script src="js/f-negative.js"></script>
     <link rel="stylesheet" href="style.css" type="text/css" media="all">
 </head>
 
 <body>
     <nav>
         <ul>
-            <li><a href="#">À propos</a></li>
-            <li><a href="#">Le pêcheur</a></li>
+            <li><a href="#couleurs-contexte">À propos</a></li>
+            <li><a href="#pecheur">Le pêcheur</a></li>
             <li><a href="#lavague">La vague</a></li>
-            <li><a href="#">Le lac de Suwa</a></li>
+            <li><a href="#lacsuwa">Le lac de Suwa</a></li>
         </ul>
     </nav>
 
-
+    <!--SECTION À PROPOS--------------------------------------------------------------------------------------------------------->
     <section id="a-propos" class="div-column">
         <h1>Hokusai Katsushika</h1>
         <p>Hokusai Katsushika est un artiste japonais pratiquant la peinture, le dessin et la gravure. <br>Il est également connu comme auteur d’écrits populaires au japon. <br>Hokusai, aussi surnommé le “Vieux fou du dessin” est principalement reconnu pour
@@ -33,6 +34,27 @@
         <img src="img/hokusai-caractere.png" class="kanji">
     </section>
 
+    <!--SECTION DE LA VAGUE--------------------------------------------------------------------------------------------------------->
+    <section id="couleurs-contexte" class="div-column">
+        <h2>Couleurs & Contexte</h2>
+        <hr>
+        <div class="div-row">
+            <p>Le bleu de prusse est un pigment bleu foncé né vers les années 1700. Ce pigment a été découvert accidentellement en Allemagne. Un chimiste du nom de Georg Ernst Stahl tentait de créer un rouge carmin et a obtenu ce bleu aux teintes foncées.
+                Dès le procédé de fabrication connu, le bleu de Prusse est diffusé et exporté partout. Le Japon en importe significativement à partir de 1830 à l'époque de la mode de l'aizuri-e, des estampes gravées sur bois (ukiyo-e) en camaïeu de bleu.
+                Le bleu de Prusse est la couleur principale des Trente-six vues du mont Fuji, de Hokusai, publiées en 1830.</p>
+            <p>Les 3 peintures présentées ici font partie de la série s’intitulant “Les 36 vues du Mont Fuji” créées par Katsushika Hokusai, et publiées autour des années 1830. Cette série comprends 46 estampes, chacune de ces oeuvres représente le Mont
+                Fuji vu de diverses manières, depuis différents lieux, différentes saisons... La technique utilisée pour faire ces oeuvres est donc de l’estampe. L’artiste grave donc sur du bois les reliefs de l’oeuvre et choisit ensuite les couleurs
+                afin de faire imprimer l’estampe.</p>
+        </div>
+
+        <ul>
+            <li><a class="number number1">1</a><a href="#pecheur">Le pêcheur de Kajikazawa</a></li>
+            <li><a class="number">2</a><a href="#lavague">La grande vague de Kanagawa</a></li>
+            <li><a class="number">3</a><a href="#lacsuwa">Le lac Suwa dans la province de Shinano</a></li>
+        </ul>
+    </section>
+
+    <!--SECTION DU PÊCHEUR--------------------------------------------------------------------------------------------------------->
     <section id="pecheur" class="div-column">
         <h2>Le pêcheur de Kajikazawa</h2>
         <hr>
@@ -49,33 +71,34 @@
             </div>
             <!--COLONNE AVEC FILTRES-->
             <div class="div-column filters">
-                <button id="startbutton">Take photo</button>
-                <button id="invertbutton">Mon filtre</button>
+                <button>Take photo</button>
+                <button>Mon filtre</button>
                 <div class="div-column">
                     <label>Contraste</label>
                     <div class="contrast-button">
-                        <button id="subcontrastbutton">-</button>
-                        <button id="addcontrastbutton">+</button>
+                        <button>-</button>
+                        <button>+</button>
                     </div>
                 </div>
                 <div class="div-column">
                     <label>Luminosité</label>
                     <div class="luminosity-button">
-                        <button id="subluminositybutton">-</button>
-                        <button id="addluminositybutton">+</button>
+                        <button>-</button>
+                        <button>+</button>
                     </div>
                 </div>
                 <div class="div-column">
                     <label>Filtres</label>
                     <div class="filters1-button">
-                        <button id="blackwhitebutton">Noir et blanc</button>
-                        <button id="addluminositybutton">Négatif</button>
+                        <button>Noir et blanc</button>
+                        <button>Négatif</button>
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
-
+    <!--SECTION DE LA VAGUE--------------------------------------------------------------------------------------------------------->
     <section id="lavague" class="div-column">
         <h2>La grande vague de Kanagawa</h2>
         <hr>
@@ -92,40 +115,41 @@
             </div>
             <!--COLONNE AVEC FILTRES-->
             <div class="div-column filters">
-                <button id="startbutton">Take photo</button>
-                <button id="invertbutton">Mon filtre</button>
+                <button>Take photo</button>
+                <button>Mon filtre</button>
                 <div class="div-column">
                     <label>Contraste</label>
                     <div class="contrast-button">
-                        <button id="subcontrastbutton">-</button>
-                        <button id="addcontrastbutton">+</button>
+                        <button>-</button>
+                        <button>+</button>
                     </div>
                 </div>
                 <div class="div-column">
                     <label>Luminosité</label>
                     <div class="luminosity-button">
-                        <button id="subluminositybutton">-</button>
-                        <button id="addluminositybutton">+</button>
+                        <button>-</button>
+                        <button>+</button>
                     </div>
                 </div>
                 <div class="div-column">
                     <label>Filtres</label>
                     <div class="filters1-button">
-                        <button id="blackwhitebutton">Noir et blanc</button>
-                        <button id="addluminositybutton">Négatif</button>
+                        <button>Noir et blanc</button>
+                        <button>Négatif</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!--SECTION DU LAC SUWA--------------------------------------------------------------------------------------------------------->
     <section id="lacsuwa" class="div-column">
         <h2>Le lac Suwa dans la province de Shinano</h2>
         <hr>
         <p>Le lac Suwa est une estampe de paysage avec vue sur le Mont Fuji, faisant partie de la série sur cette montagne, crée par Hokusai au XIXème siècle.</p>
-        <p> Centré au premier plan on observe le sommet d’une colline. Quelques arbres typiques du paysage japonais et une hutte, peut être un sanctuaire. Au second plan est dessiné une forêt, avec un village et des bateaux de pêcheurs. Enfin, dans le fond
-            reigne le fameux Mont-Fuji, présent sur toutes les estampes de la série. Cette fois ci encore, le sommet est reconnaissable car enneigé. Il veille sur toute la province. Le paysage est calme, presque onirique, contrairement à d’autres oeuvres
-            où la nature et la mer est apparue comme agitée et en colère..</p>
+        <p> Centré au premier plan on observe le sommet d’une colline. Quelques arbres typiques du paysage japonais et une hutte, peut être un sanctuaire. Au second plan est dessiné une forêt, avec un village et des bateaux de pêcheurs. <br>Enfin, dans le
+            fond reigne le fameux Mont-Fuji, présent sur toutes les estampes de la série. Cette fois ci encore, le sommet est reconnaissable car enneigé. Il veille sur toute la province. <br>Le paysage est calme, presque onirique, contrairement à d’autres
+            oeuvres où la nature et la mer est apparue comme agitée et en colère..</p>
         <div class="div-row">
             <img src="img/lacsuwa-caractere.png" class="oeuvre-kanji">
             <!--COLONNE AVEC IMAGES-->
@@ -134,6 +158,41 @@
                 <img src="img/nuancier-lacsuwa.png" class="nuancier">
             </div>
             <!--COLONNE AVEC FILTRES-->
+            <div class="div-column filters">
+                <button>Take photo</button>
+                <button>Mon filtre</button>
+                <div class="div-column">
+                    <label>Contraste</label>
+                    <div class="contrast-button">
+                        <button>-</button>
+                        <button>+</button>
+                    </div>
+                </div>
+                <div class="div-column">
+                    <label>Luminosité</label>
+                    <div class="luminosity-button">
+                        <button>-</button>
+                        <button>+</button>
+                    </div>
+                </div>
+                <div class="div-column">
+                    <label>Filtres</label>
+                    <div class="filters1-button">
+                        <button>Noir et blanc</button>
+                        <button>Négatif</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--SECTION DU COURS--------------------------------------------------------------------------------------------------------->
+    <section class="div-column">
+        <h2>PARTIE FILTRES COURS : </h2>
+        <div class="row">
+            <video id="video">Video stream not available.</video>
+            <canvas id="mycanvas"></canvas>
+            <img width="50%" id="photo" alt="The screen capture will appear in this box.">
             <div class="div-column filters">
                 <button id="startbutton">Take photo</button>
                 <button id="invertbutton">Mon filtre</button>
@@ -155,20 +214,12 @@
                     <label>Filtres</label>
                     <div class="filters1-button">
                         <button id="blackwhitebutton">Noir et blanc</button>
-                        <button id="addluminositybutton">Négatif</button>
+                        <button id="negativebutton">Négatif</button>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <section class="div-column">
-        <h2>PARTIE FILTRES COURS : </h2>
-        <div class="row">
-            <video id="video">Video stream not available.</video>
-            <canvas id="mycanvas"></canvas>
-            <img width="50%" id="photo" alt="The screen capture will appear in this box.">
-        </div>
 
     </section>
 
@@ -176,10 +227,10 @@
 
     <footer>
         <ul>
-            <li><a href="#">À propos</a></li>
-            <li><a href="#">Le pêcheur</a></li>
+            <li><a href="#couleurs-contexte">À propos</a></li>
+            <li><a href="#pecheur">Le pêcheur</a></li>
             <li><a href="#lavague">La vague</a></li>
-            <li><a href="#">Le lac de Suwa</a></li>
+            <li><a href="#lacsuwa">Le lac de Suwa</a></li>
         </ul>
         <img src="img/footer-caracter.png" class="footer-kanji">
         <p>Made with Love by Rose Production - 2021 - All rights reserved</p>

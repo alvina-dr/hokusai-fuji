@@ -89,22 +89,6 @@
         }*/
 
 
-        /*for (var y = 0; y < height; y++) { //FILTRE NOIR ET BLANC
-            for (var x = 0; x < width; x++) {
-                tr[x][y] = (tr[x][y] + tg[x][y] + tb[x][y]) / 3;
-                tg[x][y] = (tr[x][y] + tg[x][y] + tb[x][y]) / 3;
-                tb[x][y] = (tr[x][y] + tg[x][y] + tb[x][y]) / 3;
-                ta[x][y] = 255;
-            }
-        }*/
-        /*for (var y = 0; y < height; y++) { //FILTRE NÉGATIF
-            for (var x = 0; x < width; x++) {
-                tr[x][y] = 255 - tr[x][y];
-                tg[x][y] = 255 - tg[x][y];
-                tb[x][y] = 255 - tb[x][y];
-                ta[x][y] = 255;
-            }
-        }*/
 
         /*for (var y = 0; y < height; y++) { //FILTRE LUMINOSITÉ
             for (var x = 0; x < width; x++) {
