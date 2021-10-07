@@ -106,14 +106,34 @@
             }
         }*/
 
-        for (var y = 0; y < height; y++) { //FILTRE LUMINOSITÉ
+        /*for (var y = 0; y < height; y++) { //FILTRE LUMINOSITÉ
             for (var x = 0; x < width; x++) {
                 tr[x][y] = tr[x][y] + luminosity;
                 tg[x][y] = tg[x][y] + luminosity;
                 tb[x][y] = tb[x][y] + luminosity;
 
             }
-        }
+        }*/
+
+        /*for (var y = 0; y < height; y++) { //FILTRE CONTRASTE
+            for (var x = 0; x < width; x++) {
+                if (tr[x][y] <= 255 / 2) {
+                    tr[x][y] = tr[x][y] - 10;
+                } else {
+                    tr[x][y] = tr[x][y] + 10;
+                }
+                if (tg[x][y] <= 255 / 2) {
+                    tg[x][y] = tg[x][y] - 10;
+                } else {
+                    tg[x][y] = tg[x][y] + 10
+                }
+                if (tb[x][y] <= 255 / 2) {
+                    tb[x][y] = tb[x][y] - 10;
+                } else {
+                    tb[x][y] = tb[x][y] + 10
+                }
+            }
+        }*/
 
         /*for (var y = height / 2; y < height; y++) { //FILTRE NÉGATIF SPACEs
             for (var x = 0; x < width / 2; x++) {

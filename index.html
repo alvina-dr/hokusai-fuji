@@ -5,7 +5,11 @@
     <meta charset="utf-8">
     <title>Art</title>
     <script src="capture.js"></script>
-    <script src="filter.js"></script>
+    <script src="f-sub-contrast.js"></script>
+    <script src="f-add-contrast.js"></script>
+    <script src="f-add-luminosity.js"></script>
+    <script src="f-sub-luminosity.js"></script>
+    <script src="f-black-white.js"></script>
     <link rel="stylesheet" href="style.css" type="text/css" media="all">
 </head>
 
@@ -19,13 +23,7 @@
         </ul>
     </nav>
 
-    <video id="video">Video stream not available.</video>
-    <canvas id="mycanvas"></canvas>
-    <img id="photo" alt="The screen capture will appear in this box.">
-    <section class="row">
-        <button id="startbutton">Take photo</button>
-        <button id="invertbutton">Mon filtre</button>
-    </section>
+
     <section id="a-propos" class="div-column">
         <h1>Hokusai Katsushika</h1>
         <p>Hokusai Katsushika est un artiste japonais pratiquant la peinture, le dessin et la gravure. <br>Il est également connu comme auteur d’écrits populaires au japon. <br>Hokusai, aussi surnommé le “Vieux fou du dessin” est principalement reconnu pour
@@ -35,6 +33,49 @@
         <img src="img/hokusai-caractere.png" class="kanji">
     </section>
 
+    <section id="pecheur" class="div-column">
+        <h2>Le pêcheur de Kajikazawa</h2>
+        <hr>
+        <p>Kajikazawa dans la province de Kai, ou “Kôshu Kajikazawa” est la 15ème estampe de la série sur le Mont Fuji, crée par Hokusai.</p>
+        <p> Il existe plusieurs impressions de cette estampe, avec plusieurs coloris. Celle représenté ici utilise principalement le bleu de prusse.<br> Cette oeuvre est assez contrastée. Au premier plan on observe un pêcheur combattant une mer agitée. La
+            nature semble ici hostile. Son corps est tendu, son dos courbé témoigne de l’effort qu’il fournit. <br>Au dernier plan, la nature est calme. Le brouillard qui cerne la montagne témoigne du calme qui y règne. Le Mont-Fuji est ici représenté
+            comme une force de la nature.</p>
+        <div class="div-row">
+            <img src="img/pecheur-caractere.png" class="oeuvre-kanji">
+            <!--COLONNE AVEC IMAGES-->
+            <div class="div-column oeuvre-nuancier">
+                <img id="image-lavague" class="oeuvres" src="img/pecheur.jpg">
+                <img src="img/nuancier-pecheur.png" class="nuancier">
+            </div>
+            <!--COLONNE AVEC FILTRES-->
+            <div class="div-column filters">
+                <button id="startbutton">Take photo</button>
+                <button id="invertbutton">Mon filtre</button>
+                <div class="div-column">
+                    <label>Contraste</label>
+                    <div class="contrast-button">
+                        <button id="subcontrastbutton">-</button>
+                        <button id="addcontrastbutton">+</button>
+                    </div>
+                </div>
+                <div class="div-column">
+                    <label>Luminosité</label>
+                    <div class="luminosity-button">
+                        <button id="subluminositybutton">-</button>
+                        <button id="addluminositybutton">+</button>
+                    </div>
+                </div>
+                <div class="div-column">
+                    <label>Filtres</label>
+                    <div class="filters1-button">
+                        <button id="blackwhitebutton">Noir et blanc</button>
+                        <button id="addluminositybutton">Négatif</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="lavague" class="div-column">
         <h2>La grande vague de Kanagawa</h2>
         <hr>
@@ -42,39 +83,107 @@
             et le Mont Fuji.</p>
         <p> La mer agitée est un symbole de destruction. Elle forme un rouleau qui vise à détruire les oshiokuri-bune, les bateaux de pêcheurs. Ces derniers sont typiques du japon au XIXème siècle. <br>Enfin, le Mont-Fuji est reconnaissable à son sommet enneigé.
             Il passe au dernier plan, mais représente le japon et la province de Kanagawa, d’où le nom de l’oeuvre.</p>
-        <div class="div-row ">
+        <div class="div-row">
+            <img src="img/vague-caractere.png" class="oeuvre-kanji">
+            <!--COLONNE AVEC IMAGES-->
             <div class="div-column oeuvre-nuancier">
-                <img id="image1" class="oeuvres" src="img/lavague.jpg">
+                <img id="image-lavague" class="oeuvres" src="img/lavague.jpg">
                 <img src="img/nuancier-vague.png" class="nuancier">
             </div>
-            <div class="sliders">
-                <!--label>Blur</label>
-                <input type="range" class="slider" min="0" max="100" value="0" step="1" onchange="applyFilter()" data-filter="blur" data-scale="px"><br>
-                <label>Contrast</label>
-                <input type="range" class="slider" min="0" max="100" value="100" step="1" onchange="applyFilter()" data-filter="contrast" data-scale="%"><br-->
-                <label>Luminosité</label>
-                <input id="luminosity" type="range" class="slider" min="-100" max="100" onchange="myInvert()" value="0" step="10"><br>
-                <!--label>Grayscale</label>
-                <input type="range" class="slider" min="0" max="100" value="0" step="1" onchange="applyFilter()" data-filter="grayscale" data-scale="%"><br>
-                <label>Hue Rotate</label>
-                <input type="range" class="slider" min="0" max="100" value="0" step="1" onchange="applyFilter()" data-filter="hue-rotate" data-scale="deg"><br-->
+            <!--COLONNE AVEC FILTRES-->
+            <div class="div-column filters">
+                <button id="startbutton">Take photo</button>
+                <button id="invertbutton">Mon filtre</button>
+                <div class="div-column">
+                    <label>Contraste</label>
+                    <div class="contrast-button">
+                        <button id="subcontrastbutton">-</button>
+                        <button id="addcontrastbutton">+</button>
+                    </div>
+                </div>
+                <div class="div-column">
+                    <label>Luminosité</label>
+                    <div class="luminosity-button">
+                        <button id="subluminositybutton">-</button>
+                        <button id="addluminositybutton">+</button>
+                    </div>
+                </div>
+                <div class="div-column">
+                    <label>Filtres</label>
+                    <div class="filters1-button">
+                        <button id="blackwhitebutton">Noir et blanc</button>
+                        <button id="addluminositybutton">Négatif</button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
+    <section id="lacsuwa" class="div-column">
+        <h2>Le lac Suwa dans la province de Shinano</h2>
+        <hr>
+        <p>Le lac Suwa est une estampe de paysage avec vue sur le Mont Fuji, faisant partie de la série sur cette montagne, crée par Hokusai au XIXème siècle.</p>
+        <p> Centré au premier plan on observe le sommet d’une colline. Quelques arbres typiques du paysage japonais et une hutte, peut être un sanctuaire. Au second plan est dessiné une forêt, avec un village et des bateaux de pêcheurs. Enfin, dans le fond
+            reigne le fameux Mont-Fuji, présent sur toutes les estampes de la série. Cette fois ci encore, le sommet est reconnaissable car enneigé. Il veille sur toute la province. Le paysage est calme, presque onirique, contrairement à d’autres oeuvres
+            où la nature et la mer est apparue comme agitée et en colère..</p>
+        <div class="div-row">
+            <img src="img/lacsuwa-caractere.png" class="oeuvre-kanji">
+            <!--COLONNE AVEC IMAGES-->
+            <div class="div-column oeuvre-nuancier">
+                <img id="image-lavague" class="oeuvres" src="img/lacsuwa.jpg">
+                <img src="img/nuancier-lacsuwa.png" class="nuancier">
+            </div>
+            <!--COLONNE AVEC FILTRES-->
+            <div class="div-column filters">
+                <button id="startbutton">Take photo</button>
+                <button id="invertbutton">Mon filtre</button>
+                <div class="div-column">
+                    <label>Contraste</label>
+                    <div class="contrast-button">
+                        <button id="subcontrastbutton">-</button>
+                        <button id="addcontrastbutton">+</button>
+                    </div>
+                </div>
+                <div class="div-column">
+                    <label>Luminosité</label>
+                    <div class="luminosity-button">
+                        <button id="subluminositybutton">-</button>
+                        <button id="addluminositybutton">+</button>
+                    </div>
+                </div>
+                <div class="div-column">
+                    <label>Filtres</label>
+                    <div class="filters1-button">
+                        <button id="blackwhitebutton">Noir et blanc</button>
+                        <button id="addluminositybutton">Négatif</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <section class="div-column">
+        <h2>PARTIE FILTRES COURS : </h2>
+        <div class="row">
+            <video id="video">Video stream not available.</video>
+            <canvas id="mycanvas"></canvas>
+            <img width="50%" id="photo" alt="The screen capture will appear in this box.">
+        </div>
+
+    </section>
+
+
+
+    <footer>
+        <ul>
+            <li><a href="#">À propos</a></li>
+            <li><a href="#">Le pêcheur</a></li>
+            <li><a href="#lavague">La vague</a></li>
+            <li><a href="#">Le lac de Suwa</a></li>
+        </ul>
+        <img src="img/footer-caracter.png" class="footer-kanji">
+        <p>Made with Love by Rose Production - 2021 - All rights reserved</p>
+    </footer>
 </body>
-<!--script type="text/javascript">
-    var image = document.getElementById('image1');
-    var filterControls = document.querySelectorAll('input[type=range]');
-
-    function applyFilter() {
-        var computedFilters = '';
-        filterControls.forEach(function(item, index) {
-            computedFilters += item.getAttribute('data-filter') + '(' + item.value + item.getAttribute('data-scale') + ') ';
-        });
-        image.style.filter = computedFilters;
-    };
-</script-->
 
 </html>

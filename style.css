@@ -5,6 +5,7 @@
 body {
     --dark-color: #193541;
     --light-color: #FAF6F0;
+    --transparent-light-color: #faf6f0F2;
     --action-color: #FF912B;
     --transparent-action-color: #ff922b80;
 }
@@ -43,7 +44,7 @@ button:hover {
     margin-right: 5px;
 }
 
-.row {
+.div-row {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -53,17 +54,11 @@ button:hover {
 .div-column {
     display: flex;
     flex-direction: column;
-    width: 100%;
 }
 
 section {
     display: flex;
     width: 100%;
-    margin: auto;
-}
-
-#lavague {
-    width: calc(100%/12*10);
     margin: auto;
 }
 
@@ -80,16 +75,17 @@ hr {
 /*A PROPOS STYLE ---------------------------------*/
 
 #a-propos {
-    width: calc(100%/12*8);
+    width: calc(100%/12*7.5);
     margin: auto;
     display: flex;
     align-content: flex-start;
     justify-content: center;
     margin-bottom: 300px;
+    margin-top: 150px;
 }
 
 #a-propos p {
-    width: 50%;
+    width: 60%;
     text-align: justify;
 }
 
@@ -98,29 +94,39 @@ hr {
     display: flex;
     align-self: flex-end;
     height: auto;
-    width: calc(100%/12*4.5);
+    width: calc(100%/12*3.5);
     z-index: -1;
 }
 
 #a-propos .kanji {
     position: absolute;
-    height: 100%;
+    height: 60vh;
     width: auto;
     z-index: -2;
     align-self: center;
     padding-right: 17%;
 }
 
+@media screen and (max-device-width: 600px) {
+    #lavague .kanji {
+        transform: rotate(90deg);
+    }
+}
+
+
+/*FIN A PROPOS STYLE ---------------------------------*/
+
 
 /*GÉNÉRAL OEUVRES STYLE----------------*/
 
 .oeuvres {
     width: 100%;
+    margin: 0;
 }
 
 .nuancier {
     width: 100%;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .oeuvre-nuancier {
@@ -128,15 +134,94 @@ hr {
     margin: 0;
 }
 
-.slider {
-    color: var(--dark-color);
-    background-color: var(--dark-color);
+.oeuvre-background {
+    position: absolute;
+    z-index: -2;
+    width: 100%;
+    height: 150vh;
+    opacity: 5%;
 }
 
-.sliders {
+.oeuvre-kanji {
+    position: absolute;
+    height: 89vh;
+    width: auto;
+    z-index: -2;
+    align-self: flex-end;
+    margin-left: calc(100%/10*5.5);
+    margin-top: -30px;
+}
+
+.filters {
     width: calc(100%/10*2);
     margin: 0;
+    margin-left: calc(100%/10);
 }
+
+
+/*OEUVRES STYLE --------------*/
+
+#pecheur {
+    width: calc(100%/12*10);
+    padding-left: calc(100%/12);
+    padding-right: calc(100%/12);
+    background-image: url(img/pecheur-bg.png);
+    background-size: cover;
+    padding-bottom: 100px;
+}
+
+#lavague {
+    width: calc(100%/12*10);
+    padding-left: calc(100%/12);
+    padding-right: calc(100%/12);
+    background-image: url(img/vague-bg.png);
+    background-size: cover;
+    padding-bottom: 100px;
+}
+
+#lacsuwa {
+    width: calc(100%/12*10);
+    padding-left: calc(100%/12);
+    padding-right: calc(100%/12);
+    background-image: url(img/lacsuwa-bg.png);
+    background-size: cover;
+    padding-bottom: 100px;
+}
+
+
+/*FIN LA VAGUE STYLE --------------*/
+
+
+/*FOOTER STYLE --------------*/
+
+footer {
+    width: 100%;
+    margin: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+}
+
+.footer-kanji {
+    position: absolute;
+    margin: auto;
+    align-self: center;
+    z-index: -2;
+}
+
+footer ul {
+    margin-top: 60px;
+    margin-bottom: 100px;
+}
+
+footer p {
+    margin-bottom: 50px;
+    font-weight: 500;
+}
+
+
+/*FIN FOOTER STYLE --------------*/
 
 
 /*FIN IMAGES STYLE----------------*/
@@ -146,18 +231,19 @@ nav {
     width: 100%;
 }
 
-nav ul {
+ul {
     list-style: none;
     display: flex;
     flex-direction: row;
     margin: auto;
+    padding-left: 0;
 }
 
-nav ul li {
-    margin: 45px 60px;
+ul li {
+    margin: 40px 60px;
 }
 
-nav ul li a {
+ul li a {
     color: var(--dark-color);
     text-decoration: none;
     font-weight: 400;
@@ -184,4 +270,5 @@ h2 {
 p {
     font-family: Montserrat;
     font-size: 16px;
+    text-align: justify;
 }
