@@ -252,6 +252,9 @@ ul li a {
     .filters {
         display: none;
     }
+    .oeuvre-kanji {
+        display: none;
+    }
 }
 
 
@@ -310,6 +313,20 @@ ul li a {
     padding: 14px 20.605px;
 }
 
+@media screen and (max-device-width: 600px) {
+    #couleurs-contexte {
+        width: calc(100%/6*4);
+        padding: 0 calc(100%/6);
+    }
+    #couleurs-contexte .div-row {
+        display: flex;
+        flex-direction: column;
+    }
+    #couleurs-contexte p {
+        width: 100%;
+    }
+}
+
 
 /* FIN COULEURS & CONTEXTE----------*/
 
@@ -341,6 +358,21 @@ ul li a {
     background-image: url(img/lacsuwa-bg.png);
     background-size: cover;
     padding-bottom: 100px;
+}
+
+@media screen and (max-device-width: 600px) {
+    #pecheur {
+        width: calc(100%/6*4);
+        padding: 0 calc(100%/6);
+    }
+    #lavague {
+        width: calc(100%/6*4);
+        padding: 0 calc(100%/6);
+    }
+    #lacsuwa {
+        width: calc(100%/6*4);
+        padding: 0 calc(100%/6);
+    }
 }
 
 
@@ -380,6 +412,9 @@ footer p {
         display: flex;
         flex-direction: column;
     }
+    .footer-kanji {
+        display: none;
+    }
 }
 
 
@@ -418,7 +453,7 @@ p {
         margin-bottom: 30px;
     }
     p {
-        font-size: 2.5vh;
+        font-size: 2.3vh;
     }
 }
 
