@@ -343,3 +343,38 @@ function prussianblue1() {
     // MISE À JOUR DE L'IMAGE
     postfilter1();
 }
+
+function grainfilter1() { 
+    // CHARGEMENT DES TABLEAUX DE PIXELS
+    prefilter1();
+    for (var y = 0; y < height; y++) { //FILTRE GRAIN
+        for (var x = 0; x < width; x++) {
+            if (Math.random() >= 0.9) {
+            tr[x][y] = tr[x][y] + 200;
+            tg[x][y] = tg[x][y] + 200;
+            tb[x][y] = tb[x][y] + 200;
+        } else if (Math.random() <= 0.1){
+            tr[x][y] = tr[x][y] - 100;
+            tg[x][y] = tg[x][y] - 100;
+            tb[x][y] = tb[x][y] - 100;
+        }
+    }
+    }
+    // MISE À JOUR DE L'IMAGE
+    postfilter1();
+}
+
+
+function orangefilter1() {
+    // CHARGEMENT DES TABLEAUX DE PIXELS
+    prefilter1();
+    for (var y = 0; y < height; y++) { //FILTRE ORANGE
+        for (var x = 0; x < width; x++) {
+            tr[x][y] = tr[x][y];
+            tg[x][y] = tg[x][y] - 110;
+            tb[x][y] = tb[x][y] - 212;
+        }
+    }
+    // MISE À JOUR DE L'IMAGE
+    postfilter1();
+}
