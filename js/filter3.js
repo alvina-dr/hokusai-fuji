@@ -237,21 +237,15 @@ function binarisation3() {
     // CHARGEMENT DES TABLEAUX DE PIXELS
     prefilter3();
 
-    for (var y = 0; y < height; y++) { //FILTRE LUMINOSITÉ
+    for (var y = 0; y < height; y++) { //FILTRE BINARISATION
         for (var x = 0; x < width; x++) {
-            if (tr[x][y] < 255 / 2) {
+            if ((tr[x][y] + tg[x][y] + tb[x][y]) / 3 < 255 / 2) {
                 tr[x][y] = 0;
-            } else {
-                tr[x][y] = 255;
-            }
-            if (tg[x][y] < 255 / 2) {
                 tg[x][y] = 0;
-            } else {
-                tg[x][y] = 255;
-            }
-            if (tb[x][y] < 255 / 2) {
                 tb[x][y] = 0;
             } else {
+                tr[x][y] = 255;
+                tg[x][y] = 255;
                 tb[x][y] = 255;
             }
         }
