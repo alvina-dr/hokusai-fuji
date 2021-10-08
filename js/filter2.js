@@ -232,3 +232,50 @@ function drawing2() {
     // MISE À JOUR DE L'IMAGE
     postfilter2();
 }
+
+function binarisation2() {
+    // CHARGEMENT DES TABLEAUX DE PIXELS
+    prefilter2();
+
+    for (var y = 0; y < height; y++) { //FILTRE LUMINOSITÉ
+        for (var x = 0; x < width; x++) {
+            if (tr[x][y] < 255 / 2) {
+                tr[x][y] = 0;
+            } else {
+                tr[x][y] = 255;
+            }
+            if (tg[x][y] < 255 / 2) {
+                tg[x][y] = 0;
+            } else {
+                tg[x][y] = 255;
+            }
+            if (tb[x][y] < 255 / 2) {
+                tb[x][y] = 0;
+            } else {
+                tb[x][y] = 255;
+            }
+        }
+    }
+    // MISE À JOUR DE L'IMAGE
+    postfilter2();
+}
+
+function flou2() {
+    // CHARGEMENT DES TABLEAUX DE PIXELS
+    prefilter2();
+    for (var y = 1; y < height - 1; y++) { //FILTRE DE FLOU
+        for (var x = 1; x < width - 1; x++) {
+            tr[x][y] = (tr[x - 1][y + 1] + tr[x][y + 1] + tr[x + 1][y + 1] +
+                tr[x - 1][y] + tr[x][y] + tr[x + 1][y] +
+                tr[x - 1][y - 1] + tr[x][y - 1] + tr[x + 1][y - 1]) / 9;
+            tg[x][y] = (tg[x][y + 1] + tg[x][y] + tg[x][y - 1] +
+                tg[x + 1][y + 1] + tg[x + 1][y] + tg[x + 1][y - 1] +
+                tg[x - 1][y + 1] + tg[x - 1][y] + tg[x - 1][y - 1]) / 9;
+            tb[x][y] = (tb[x][y + 1] + tb[x][y] + tb[x][y - 1] +
+                tb[x + 1][y + 1] + tb[x + 1][y] + tb[x + 1][y - 1] +
+                tb[x - 1][y + 1] + tb[x - 1][y] + tb[x - 1][y - 1]) / 9;
+        }
+    }
+    // MISE À JOUR DE L'IMAGE
+    postfilter2();
+}

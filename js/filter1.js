@@ -231,3 +231,76 @@ function drawing1() {
     // MISE À JOUR DE L'IMAGE
     postfilter1();
 }
+
+function binarisation1() {
+    // CHARGEMENT DES TABLEAUX DE PIXELS
+    prefilter1();
+
+    for (var y = 0; y < height; y++) { //FILTRE LUMINOSITÉ
+        for (var x = 0; x < width; x++) {
+            if (tr[x][y] < 255 / 2) {
+                tr[x][y] = 0;
+            } else {
+                tr[x][y] = 255;
+            }
+            if (tg[x][y] < 255 / 2) {
+                tg[x][y] = 0;
+            } else {
+                tg[x][y] = 255;
+            }
+            if (tb[x][y] < 255 / 2) {
+                tb[x][y] = 0;
+            } else {
+                tb[x][y] = 255;
+            }
+        }
+    }
+    // MISE À JOUR DE L'IMAGE
+    postfilter1();
+}
+
+function flou1() {
+    // CHARGEMENT DES TABLEAUX DE PIXELS
+    prefilter1();
+    for (var y = 1; y < height - 1; y++) { //FILTRE DE FLOU
+        for (var x = 1; x < width - 1; x++) {
+            tr[x][y] = (tr[x - 1][y + 1] + tr[x][y + 1] + tr[x + 1][y + 1] +
+                tr[x - 1][y] + tr[x][y] + tr[x + 1][y] +
+                tr[x - 1][y - 1] + tr[x][y - 1] + tr[x + 1][y - 1]) / 9;
+            tg[x][y] = (tg[x][y + 1] + tg[x][y] + tg[x][y - 1] +
+                tg[x + 1][y + 1] + tg[x + 1][y] + tg[x + 1][y - 1] +
+                tg[x - 1][y + 1] + tg[x - 1][y] + tg[x - 1][y - 1]) / 9;
+            tb[x][y] = (tb[x][y + 1] + tb[x][y] + tb[x][y - 1] +
+                tb[x + 1][y + 1] + tb[x + 1][y] + tb[x + 1][y - 1] +
+                tb[x - 1][y + 1] + tb[x - 1][y] + tb[x - 1][y - 1]) / 9;
+        }
+    }
+    // MISE À JOUR DE L'IMAGE
+    postfilter1();
+}
+
+
+function reset1() {
+    alert("coucou");
+
+    photo1 = document.getElementById('photo1');
+    canvas = document.getElementById('mycanvas1');
+    context = canvas.getContext('2d');
+
+    // recopie l'image dans le canevas
+    context.drawImage(photo1, 0, 0, width, height);
+
+    // extrait le tableau de pixels du canevas
+    imgd = context.getImageData(0, 0, photo1.width, photo1.height);
+    pix = imgd.data;
+
+
+    // PASSAGE EN 1D POUR SIMPLIFIER LA GESTION DU VOISINAGE
+    // 1 tab 1D -> 4 tab 2D (r,g,b,a) 
+    // déclaration de 4 tableaux à 2 dim (de taille width * height)
+    tr = new Array(width).fill().map(() => Array(height));
+    tg = new Array(width).fill().map(() => Array(height));
+    tb = new Array(width).fill().map(() => Array(height));
+    ta = new Array(width).fill().map(() => Array(height));
+
+}
