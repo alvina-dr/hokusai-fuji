@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
 /*VARIABLES COULEURS*/
 
@@ -13,6 +14,10 @@ body {
 
 /*STYLE*/
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: Montserrat;
     margin: 0;
@@ -21,27 +26,23 @@ body {
     color: var(--dark-color);
 }
 
-#mycanvas {
-    display: none;
-}
-
 button {
-    background-color: var(--dark-color);
-    color: var(--light-color);
-    border-radius: none;
-    border: 0;
+    background-color: transparent;
+    color: var(--dark-color);
+    border-radius: 2px;
+    border: 2px solid var(--dark-color);
     padding: 10px 20px;
     margin: 10px;
-    font-family: Poppins;
+    font-family: Montserrat;
     transition: 0.3s;
     cursor: pointer;
+    font-weight: 500;
+    font-size: 16px;
 }
 
 button:hover {
-    padding: 15px 25px;
-    margin-top: 2.5px;
-    margin-left: 5px;
-    margin-right: 5px;
+    background-color: var(--dark-color);
+    color: var(--light-color);
 }
 
 .div-row {
@@ -203,7 +204,7 @@ hr {
 #couleurs-contexte .number {
     font-family: Montserrat;
     padding: 14px 19px;
-    border: 1px solid #193541;
+    border: 1px solid var(--dark-color);
     border-radius: 50px;
     margin-right: 30px;
     font-size: 16px;
@@ -331,4 +332,17 @@ p {
     font-family: Montserrat;
     font-size: 16px;
     text-align: justify;
+    font-weight: 400;
+}
+
+#mycanvas1 {
+    display: none;
+}
+
+#mycanvas2 {
+    display: none;
+}
+
+#mycanvas3 {
+    display: none;
 }

@@ -4,13 +4,9 @@
 <head>
     <meta charset="utf-8">
     <title>Art</title>
-    <script src="js/capture.js"></script>
-    <script src="js/f-sub-contrast.js"></script>
-    <script src="js/f-add-contrast.js"></script>
-    <script src="js/f-add-luminosity.js"></script>
-    <script src="js/f-sub-luminosity.js"></script>
-    <script src="js/f-black-white.js"></script>
-    <script src="js/f-negative.js"></script>
+    <script src="js/filter1.js"></script>
+    <script src="js/filter2.js"></script>
+    <script src="js/filter3.js"></script>
     <link rel="stylesheet" href="style.css" type="text/css" media="all">
 </head>
 
@@ -34,7 +30,7 @@
         <img src="img/hokusai-caractere.png" class="kanji">
     </section>
 
-    <!--SECTION DE LA VAGUE--------------------------------------------------------------------------------------------------------->
+    <!--SECTION COULEURS ET CONTEXTE--------------------------------------------------------------------------------------------------------->
     <section id="couleurs-contexte" class="div-column">
         <h2>Couleurs & Contexte</h2>
         <hr>
@@ -66,32 +62,33 @@
             <img src="img/pecheur-caractere.png" class="oeuvre-kanji">
             <!--COLONNE AVEC IMAGES-->
             <div class="div-column oeuvre-nuancier">
-                <img id="image-lavague" class="oeuvres" src="img/pecheur.jpg">
+                <canvas id="mycanvas1"></canvas>
+                <img id="photo1" crossorigin="anonymous" class="oeuvres" src="img/pecheur.jpg">
                 <img src="img/nuancier-pecheur.png" class="nuancier">
             </div>
             <!--COLONNE AVEC FILTRES-->
             <div class="div-column filters">
-                <button>Take photo</button>
-                <button>Mon filtre</button>
                 <div class="div-column">
                     <label>Contraste</label>
                     <div class="contrast-button">
-                        <button>-</button>
-                        <button>+</button>
+                        <button onclick="subContrast1();">-</button>
+                        <button onclick="addContrast1();">+</button>
                     </div>
                 </div>
                 <div class="div-column">
                     <label>Luminosité</label>
                     <div class="luminosity-button">
-                        <button>-</button>
-                        <button>+</button>
+                        <button onclick="subLuminosity1();">-</button>
+                        <button onclick="addLuminosity1();">+</button>
                     </div>
                 </div>
                 <div class="div-column">
                     <label>Filtres</label>
                     <div class="filters1-button">
-                        <button>Noir et blanc</button>
-                        <button>Négatif</button>
+                        <button onclick="whiteBlack1();">Noir et blanc</button>
+                        <button onclick="negative1();">Négatif</button>
+                        <button onclick="drawing1();">Dessin</button>
+                        <button onclick="reset1();">Reset </button>
                     </div>
                 </div>
             </div>
@@ -110,32 +107,33 @@
             <img src="img/vague-caractere.png" class="oeuvre-kanji">
             <!--COLONNE AVEC IMAGES-->
             <div class="div-column oeuvre-nuancier">
-                <img id="image-lavague" class="oeuvres" src="img/lavague.jpg">
+                <canvas id="mycanvas2"></canvas>
+                <img id="photo2" crossorigin="anonymous" class="oeuvres" src="img/lavague.jpg">
                 <img src="img/nuancier-vague.png" class="nuancier">
             </div>
             <!--COLONNE AVEC FILTRES-->
             <div class="div-column filters">
-                <button>Take photo</button>
-                <button>Mon filtre</button>
                 <div class="div-column">
                     <label>Contraste</label>
                     <div class="contrast-button">
-                        <button>-</button>
-                        <button>+</button>
+                        <button onclick="subContrast2();">-</button>
+                        <button onclick="addContrast2();">+</button>
                     </div>
                 </div>
                 <div class="div-column">
                     <label>Luminosité</label>
                     <div class="luminosity-button">
-                        <button>-</button>
-                        <button>+</button>
+                        <button onclick="subLuminosity2();">-</button>
+                        <button onclick="addLuminosity2();">+</button>
                     </div>
                 </div>
                 <div class="div-column">
                     <label>Filtres</label>
                     <div class="filters1-button">
-                        <button>Noir et blanc</button>
-                        <button>Négatif</button>
+                        <button onclick="whiteBlack2();">Noir et blanc</button>
+                        <button onclick="negative2();">Négatif</button>
+                        <button onclick="drawing2();">Dessin</button>
+                        <button onclick="reset2();">Reset </button>
                     </div>
                 </div>
             </div>
@@ -154,32 +152,33 @@
             <img src="img/lacsuwa-caractere.png" class="oeuvre-kanji">
             <!--COLONNE AVEC IMAGES-->
             <div class="div-column oeuvre-nuancier">
-                <img id="image-lavague" class="oeuvres" src="img/lacsuwa.jpg">
+                <canvas id="mycanvas3"></canvas>
+                <img id="photo3" crossorigin="anonymous" class="oeuvres" src="img/lacsuwa.jpg">
                 <img src="img/nuancier-lacsuwa.png" class="nuancier">
             </div>
             <!--COLONNE AVEC FILTRES-->
             <div class="div-column filters">
-                <button>Take photo</button>
-                <button>Mon filtre</button>
                 <div class="div-column">
                     <label>Contraste</label>
                     <div class="contrast-button">
-                        <button>-</button>
-                        <button>+</button>
+                        <button onclick="subContrast3();">-</button>
+                        <button onclick="addContrast3();">+</button>
                     </div>
                 </div>
                 <div class="div-column">
                     <label>Luminosité</label>
                     <div class="luminosity-button">
-                        <button>-</button>
-                        <button>+</button>
+                        <button onclick="subLuminosity3();">-</button>
+                        <button onclick="addLuminosity3();">+</button>
                     </div>
                 </div>
                 <div class="div-column">
                     <label>Filtres</label>
                     <div class="filters1-button">
-                        <button>Noir et blanc</button>
-                        <button>Négatif</button>
+                        <button onclick="whiteBlack3();">Noir et blanc</button>
+                        <button onclick="negative3();">Négatif</button>
+                        <button onclick="drawing3();">Dessin</button>
+                        <button onclick="reset3();">Reset </button>
                     </div>
                 </div>
             </div>
@@ -190,34 +189,36 @@
     <section class="div-column">
         <h2>PARTIE FILTRES COURS : </h2>
         <div class="row">
-            <video id="video">Video stream not available.</video>
-            <canvas id="mycanvas"></canvas>
-            <img width="50%" id="photo" alt="The screen capture will appear in this box.">
+            <!--video id="video">Video stream not available.</video-->
+
+            <!--img width="50%" id="photo" crossorigin='anonymous' src="img/lavague.jpg">
             <div class="div-column filters">
                 <button id="startbutton">Take photo</button>
                 <button id="invertbutton">Mon filtre</button>
                 <div class="div-column">
                     <label>Contraste</label>
                     <div class="contrast-button">
-                        <button id="subcontrastbutton">-</button>
-                        <button id="addcontrastbutton">+</button>
+                        <button onclick="subContrast();" id="subcontrastbutton">-</button>
+                        <button onclick="addContrast();" id="addcontrastbutton">+</button>
                     </div>
                 </div>
                 <div class="div-column">
                     <label>Luminosité</label>
                     <div class="luminosity-button">
-                        <button id="subluminositybutton">-</button>
-                        <button id="addluminositybutton">+</button>
+                        <button onclick="subLuminosity();" id="subluminositybutton">-</button>
+                        <button onclick="addLuminosity();" id="addluminositybutton">+</button>
                     </div>
                 </div>
                 <div class="div-column">
                     <label>Filtres</label>
                     <div class="filters1-button">
-                        <button id="blackwhitebutton">Noir et blanc</button>
-                        <button id="negativebutton">Négatif</button>
+                        <button onclick="whiteBlack();">Noir et blanc</button>
+                        <button onclick="negative();" id="negativebutton">Négatif</button>
+                        <button onclick="drawing();" id="drawingbutton">Dessin</button>
+                        <button onclick="reset();" id="Reset">Reset </button>
                     </div>
                 </div>
-            </div>
+            </div-->
         </div>
 
 
