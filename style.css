@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baskervville&display=swap');
 
 /*VARIABLES COULEURS*/
 
@@ -75,7 +75,7 @@ hr {
 @media screen and (max-device-width: 600px) {
     hr {
         height: 0.9vh;
-        width: calc(100%/6*3);
+        width: 50%;
     }
 }
 
@@ -239,6 +239,10 @@ ul li a {
     margin-top: -30px;
 }
 
+.oeuvre-kanji-phone {
+    display: none;
+}
+
 .filters {
     width: calc(100%/10*2);
     margin: 0;
@@ -248,12 +252,21 @@ ul li a {
 @media screen and (max-device-width: 600px) {
     .oeuvre-nuancier {
         width: 100%;
+        margin-top: 300px;
     }
     .filters {
         display: none;
     }
     .oeuvre-kanji {
         display: none;
+    }
+    .oeuvre-kanji-phone {
+        display: flex;
+        position: absolute;
+        width: 90%;
+        z-index: -2;
+        margin-left: 5%;
+        margin-top: 200px;
     }
 }
 
@@ -361,17 +374,44 @@ ul li a {
 }
 
 @media screen and (max-device-width: 600px) {
+    /*PECHEUR*/
     #pecheur {
-        width: calc(100%/6*4);
+        width: 100%;
+        padding: 0;
+    }
+    #pecheur p,
+    #pecheur h2 {
         padding: 0 calc(100%/6);
     }
+    #pecheur hr {
+        margin-left: calc(100%/6);
+        width: calc(100%/6*2);
+    }
+    /*LA VAGUE*/
     #lavague {
-        width: calc(100%/6*4);
+        width: 100%;
+        padding: 0;
+    }
+    #lavague p,
+    #lavague h2 {
         padding: 0 calc(100%/6);
     }
+    #lavague hr {
+        margin-left: calc(100%/6);
+        width: calc(100%/6*2);
+    }
+    /*LAC SUWA*/
     #lacsuwa {
-        width: calc(100%/6*4);
+        width: 100%;
+        padding: 0;
+    }
+    #lacsuwa p,
+    #lacsuwa h2 {
         padding: 0 calc(100%/6);
+    }
+    #lacsuwa hr {
+        margin-left: calc(100%/6);
+        width: calc(100%/6*2);
     }
 }
 
@@ -397,6 +437,10 @@ footer {
     z-index: -2;
 }
 
+.footer-kanji-phone {
+    display: none;
+}
+
 footer ul {
     margin-top: 60px;
     margin-bottom: 100px;
@@ -411,9 +455,27 @@ footer p {
     footer ul {
         display: flex;
         flex-direction: column;
+        margin-top: 0;
+    }
+    footer ul li {
+        align-self: center;
+        margin: 150px 0;
+    }
+    footer ul li a {
+        font-size: 2.3vh;
+        text-align: center;
     }
     .footer-kanji {
         display: none;
+    }
+    .footer-kanji-phone {
+        display: flex;
+        width: calc(100%/6*2);
+        position: absolute;
+    }
+    footer p {
+        text-align: center;
+        padding: 0 calc(100%/6);
     }
 }
 
