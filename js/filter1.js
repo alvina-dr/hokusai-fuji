@@ -304,3 +304,42 @@ function reset1() {
     ta = new Array(width).fill().map(() => Array(height));
 
 }
+
+
+function prussianblue1() {
+    // CHARGEMENT DES TABLEAUX DE PIXELS
+    prefilter1();
+    for (var y = 0; y < height; y++) { //FILTRE NIVEAU DE GRIS
+        for (var x = 0; x < width; x++) {
+            tr[x][y] = (tr[x][y] + tg[x][y] + tb[x][y]) / 3;
+            tg[x][y] = (tr[x][y] + tg[x][y] + tb[x][y]) / 3;
+            tb[x][y] = (tr[x][y] + tg[x][y] + tb[x][y]) / 3;
+        }
+    }
+     for (var y = 0; y < height; y++) { //FILTRE BLEU
+        for (var x = 0; x < width; x++) {
+            if (tr[x][y]>255/4*3) { //beige clair
+                tr[x][y] = 250;
+                tg[x][y] = 246;
+                tb[x][y] = 240;
+            }
+            if (255/2<tr[x][y] && tr[x][y]<255/4*3){ //beige foncé
+                tr[x][y] = 183;
+                tg[x][y] = 188;
+                tb[x][y] = 172;
+            }
+            if (255/4 < tr[x][y] && tr[x][y]<255/2){ //bleu clair
+                tr[x][y] = 86;
+                tg[x][y] = 144;
+                tb[x][y] = 181;
+            }
+            if (tr[x][y]<255/4){ //bleu de prusse
+                tr[x][y] = 36;
+                tg[x][y] = 68;
+                tb[x][y] = 92;
+            }
+        }
+    }
+    // MISE À JOUR DE L'IMAGE
+    postfilter1();
+}
