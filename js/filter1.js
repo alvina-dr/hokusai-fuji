@@ -1,8 +1,10 @@
 "use strict";
 var tr, tg, tb, ta;
+var otr, otg, otb, ota;
 var width, height;
 var photo1, canvas;
 var pix, imgd, context;
+
 
 function prefilter1() {
 
@@ -66,7 +68,6 @@ function postfilter1() {
     var data1 = canvas.toDataURL('image/png');
     photo1.setAttribute('src', data1);
 }
-
 
 function negative1() {
     // CHARGEMENT DES TABLEAUX DE PIXELS
@@ -280,30 +281,7 @@ function flou1() {
 }
 
 
-function reset1() {
-    alert("coucou");
 
-    photo1 = document.getElementById('photo1');
-    canvas = document.getElementById('mycanvas1');
-    context = canvas.getContext('2d');
-
-    // recopie l'image dans le canevas
-    context.drawImage(photo1, 0, 0, width, height);
-
-    // extrait le tableau de pixels du canevas
-    imgd = context.getImageData(0, 0, photo1.width, photo1.height);
-    pix = imgd.data;
-
-
-    // PASSAGE EN 1D POUR SIMPLIFIER LA GESTION DU VOISINAGE
-    // 1 tab 1D -> 4 tab 2D (r,g,b,a) 
-    // déclaration de 4 tableaux à 2 dim (de taille width * height)
-    tr = new Array(width).fill().map(() => Array(height));
-    tg = new Array(width).fill().map(() => Array(height));
-    tb = new Array(width).fill().map(() => Array(height));
-    ta = new Array(width).fill().map(() => Array(height));
-
-}
 
 
 function prussianblue1() {

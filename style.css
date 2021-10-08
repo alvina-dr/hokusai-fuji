@@ -73,6 +73,53 @@ hr {
 }
 
 
+/*NAV BAR STYLE----------------*/
+
+nav {
+    display: flex;
+    width: 100%;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    padding-left: 0;
+}
+
+ul li {
+    margin: 40px 60px;
+}
+
+ul li a {
+    color: var(--dark-color);
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 16px;
+    text-shadow: 0 1px 1px var(--transparent-action-color);
+}
+
+.burger {
+    display: none;
+}
+
+@media screen and (max-device-width: 600px) {
+    nav {
+        position: absolute;
+    }
+    nav ul {
+        display: none;
+    }
+    nav .burger {
+        display: flex;
+    }
+}
+
+
+/*FIN BAR STYLE----------------*/
+
+
 /*A PROPOS STYLE ---------------------------------*/
 
 #a-propos {
@@ -109,8 +156,20 @@ hr {
 }
 
 @media screen and (max-device-width: 600px) {
-    #lavague .kanji {
-        transform: rotate(90deg);
+    #a-propos {
+        height: 100vh;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    #a-propos .kanji {
+        height: 90vh;
+        width: auto;
+    }
+    #a-propos .portrait {
+        height: 60vh;
+        width: auto;
+        margin: none;
+        left: 50vw;
     }
 }
 
@@ -282,34 +341,6 @@ footer p {
 
 
 /*FIN FOOTER STYLE --------------*/
-
-
-/*FIN IMAGES STYLE----------------*/
-
-nav {
-    display: flex;
-    width: 100%;
-}
-
-ul {
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    margin: auto;
-    padding-left: 0;
-}
-
-ul li {
-    margin: 40px 60px;
-}
-
-ul li a {
-    color: var(--dark-color);
-    text-decoration: none;
-    font-weight: 400;
-    font-size: 16px;
-    text-shadow: 0 1px 1px var(--transparent-action-color);
-}
 
 
 /*TEXTES STYLE--------------------------------------*/

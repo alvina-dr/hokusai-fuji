@@ -19,6 +19,7 @@
             <li><a href="#lavague">La vague</a></li>
             <li><a href="#lacsuwa">Le lac de Suwa</a></li>
         </ul>
+        <div class="burger"></div>
     </nav>
 
     <!--SECTION À PROPOS--------------------------------------------------------------------------------------------------------->
@@ -64,7 +65,7 @@
             <!--COLONNE AVEC IMAGES-->
             <div class="div-column oeuvre-nuancier">
                 <canvas id="mycanvas1"></canvas>
-                <img id="photo1" crossorigin="anonymous" class="oeuvres" src="img/pecheur.jpg">
+                <img name="photo1" id="photo1" crossorigin="anonymous" class="oeuvres" src="img/pecheur.jpg">
                 <img src="img/nuancier-pecheur.png" class="nuancier">
             </div>
             <!--COLONNE AVEC FILTRES-->
@@ -94,7 +95,7 @@
                         <button onclick="prussianblue1();">Bleu de prusse</button>
                         <button onclick="grainfilter1();">Grain</button>
                         <button onclick="orangefilter1();">Orange</button>
-                        <button onclick="reset1();">Reset </button>
+                        <button onclick="javascript:document.photo1.src='img/pecheur.jpg'">Remettre à zéro</button>
                     </div>
                 </div>
             </div>
@@ -114,7 +115,7 @@
             <!--COLONNE AVEC IMAGES-->
             <div class="div-column oeuvre-nuancier">
                 <canvas id="mycanvas2"></canvas>
-                <img id="photo2" crossorigin="anonymous" class="oeuvres" src="img/lavague.jpg">
+                <img name="photo2" id="photo2" crossorigin="anonymous" class="oeuvres" src="img/lavague.jpg">
                 <img src="img/nuancier-vague.png" class="nuancier">
             </div>
             <!--COLONNE AVEC FILTRES-->
@@ -144,7 +145,7 @@
                         <button onclick="prussianblue2();">Bleu de prusse</button>
                         <button onclick="grainfilter2();">Grain</button>
                         <button onclick="orangefilter2();">Orange</button>
-                        <button onclick="reset2();">Reset </button>
+                        <button onclick="javascript:document.photo2.src='img/lavague.jpg'">Remettre à zéro</button>
                     </div>
                 </div>
             </div>
@@ -164,7 +165,7 @@
             <!--COLONNE AVEC IMAGES-->
             <div class="div-column oeuvre-nuancier">
                 <canvas id="mycanvas3"></canvas>
-                <img id="photo3" crossorigin="anonymous" class="oeuvres" src="img/lacsuwa.jpg">
+                <img name="photo3" id="photo3" crossorigin="anonymous" class="oeuvres" src="img/lacsuwa.jpg">
                 <img src="img/nuancier-lacsuwa.png" class="nuancier">
             </div>
             <!--COLONNE AVEC FILTRES-->
@@ -194,7 +195,7 @@
                         <button onclick="prussianblue3();">Bleu de prusse</button>
                         <button onclick="grainfilter3();">Grain</button>
                         <button onclick="orangefilter3();">Orange</button>
-                        <button onclick="reset3();">Reset </button>
+                        <button onclick="javascript:document.photo3.src='img/lacsuwa.jpg'">Remettre à zéro</button>
                     </div>
                 </div>
             </div>
