@@ -146,6 +146,10 @@ ul li a {
     z-index: -1;
 }
 
+#a-propos .portrait-phone {
+    display: none;
+}
+
 #a-propos .kanji {
     position: absolute;
     height: 60vh;
@@ -160,16 +164,24 @@ ul li a {
         height: 100vh;
         margin-top: 0;
         margin-bottom: 0;
+        overflow: hidden;
     }
     #a-propos .kanji {
         height: 90vh;
         width: auto;
     }
     #a-propos .portrait {
+        display: none;
+    }
+    #a-propos .portrait-phone {
+        display: flex;
         height: 60vh;
         width: auto;
-        margin: none;
-        left: 50vw;
+        margin: 0;
+        right: 0;
+    }
+    #a-propos p {
+        font-size: 2vh;
     }
 }
 
@@ -364,6 +376,12 @@ p {
     font-size: 16px;
     text-align: justify;
     font-weight: 400;
+}
+
+@media screen and (max-device-width: 600px) {
+    h1 {
+        font-size: 5vh;
+    }
 }
 
 #mycanvas1 {
